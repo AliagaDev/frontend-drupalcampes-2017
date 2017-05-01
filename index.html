@@ -1,0 +1,1302 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Metadrop | Buenas prácticas front-end: Maquetación por componentes</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+
+		<!--<link rel="stylesheet" href="css/theme/black.css">-->
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+
+		<!-- Main theme white/black to print/show. -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/theme/white.css' : 'css/theme/black.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- Style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="plugin/breadcrumb/breadcrumb.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<!-- @section -->
+				<section>
+					<h1 class="fontx5"><div class="fonts7">Buenas prácticas front-end:</div>Maquetación por componentes</h1>
+					<br>
+					<h2>¡Bienvenidos!</h2>
+					<img src="assets/logocamp.svg" class="hide-pdf" width="400" />
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section class="metadrop" data-background-color="#834e2e">
+					<p class="fonts9">Cristian Aliaga</span></p>
+					<p class="fonts6">@AliagaDev && drupal.org/u/<span class="fontx5">crzdev</span></p>
+					<p class="fonts9">Front-end developer</p>
+					<img src="assets/metadrop-white.svg" class="hide-pdf" width="250" />
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section>
+					<h5>¿Qué veremos?</h5>
+					<h2 class="fragment" data-fragment-index="0">Buenas prácticas: maquetación por componentes.</h2>
+
+					<div class="fragment" data-fragment-index="1"><p class="fonts7">¿Qué consigue el desarrollador, el administrador/gestor de contenidos de la web y el <span class="fontx5">usuario final</span>?</div>
+
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="slide-in fade-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia0.png" />
+
+					<aside class="notes">
+						<h1>Metodología basada en...</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia1.png" />
+
+					<aside class="notes">
+						<h1>Metodología basada en componentes reutilizables.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia2.png" />
+
+					<aside class="notes">
+						<h1>Guía de estilo que recopile todos los componentes y estilos disponibles.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia3.png" />
+
+					<aside class="notes">
+						<h1>Cómo generar / organizar / nombrar nuestras hojas de estilos y selectores.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia4.png" />
+
+					<aside class="notes">
+						<h1>Uso de Sass para generar las hojas de estilo.</h1>
+						<h1>Implementación SMACSS.</h1>
+						<h1>BEM.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia5.png" />
+
+					<aside class="notes">
+						<h1>Presentaremos el nexo de unión entre el tema basado en componentes y Drupal, en concreto con el gestor de contenidos.</h1>
+						<h1>Cómo integrar estilos en ckeditor.</h1>
+						
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia6.png" />
+
+					<aside class="notes">
+					<h1>Estilos coherentes con los predefinidos prima siempre la reutilización de los que ya tenemos.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in slide-out">
+					<h5>¿Qué veremos?</h5>
+					<img src="assets/metodologia7.png" />
+
+					<aside class="notes">
+						<h1>Cómo interpretar un diseño para detectar posibles mejoras.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-background-image="assets/metadrop.svg" data-background-position="left 10px bottom 10px" data-background-size="100px">
+					<h2>Comenzamos</h2>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section>
+					<h2>La importancia de las buenas prácticas.</h2>
+					<aside class="notes">
+					<h1>Alguien horas optimización.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="slide-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el desarrollador?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Hoja de estilos ligera.</td></tr>
+							<tr><td style="visibility: hidden;">Implementación fácil.</td></tr>
+							<tr><td style="visibility: hidden;">Reinventar la rueda.</td></tr>
+							<tr><td style="visibility: hidden;">Mantenimiento fácil.</td></tr>
+							<tr><td style="visibility: hidden;">Repertorios de componentes.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Hoja de estilos reducida, se reciclan selectores para un mismo tematizado.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el desarrollador?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Hoja de estilos ligera.</td></tr>
+							<tr><td>Implementación fácil.</td></tr>
+							<tr><td style="visibility: hidden;">Reinventar la rueda.</td></tr>
+							<tr><td style="visibility: hidden;">Mantenimiento fácil.</td></tr>
+							<tr><td style="visibility: hidden;">Repertorios de componentes.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Implementación más sencilla, solo hay que extender/reutilizar o modificar lo que tenemos.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el desarrollador?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Hoja de estilos ligera.</td></tr>
+							<tr><td>Implementación fácil.</td></tr>
+							<tr><td>Reinventar la rueda.</td></tr>
+							<tr><td style="visibility: hidden;">Mantenimiento fácil.</td></tr>
+							<tr><td style="visibility: hidden;">Repertorios de componentes.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Evitamos que se tenga que preparar tematizado distinto para componentes muy parecidos y que se podían haber unificado.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el desarrollador?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Hoja de estilos ligera.</td></tr>
+							<tr><td>Implementación fácil.</td></tr>
+							<tr><td>Reinventar la rueda.</td></tr>
+							<tr><td>Mantenimiento fácil.</td></tr>
+							<tr><td style="visibility: hidden;">Repertorios de componentes.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Tendremos que realizar menos mantenimiento y en todo caso sería más cómodo, rápido y sencillo.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el desarrollador?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Hoja de estilos ligera.</td></tr>
+							<tr><td>Implementación fácil.</td></tr>
+							<tr><td>Reinventar la rueda.</td></tr>
+							<tr><td>Mantenimiento fácil.</td></tr>
+							<tr><td>Repertorios de componentes.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Cuando queramos generar nuevas páginas/secciones podremos emplear lo que ya tenemos. Pensar cómo representar la información.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el desarrollador?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Hoja de estilos ligera.</td></tr>
+							<tr><td>Implementación fácil.</td></tr>
+							<tr><td>Reinventar la rueda.</td></tr>
+							<tr><td>Mantenimiento fácil.</td></tr>
+							<tr><td>Repertorios de componentes.</td></tr>
+							<tr><td>Ahorra tiempo.</td></tr>
+							<tr><td>...</td></tr>
+						</tbody>
+					</table>
+					<img src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Por todo lo anterior conseguimos de forma automática que necesitemos menos tiempo para realizar cualquier modificación.</h1>
+
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="slide-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el administrador/gestor de contenidos de la web?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Facilidad para generar nuevas secciones.</td></tr>
+							<tr><td style="visibility: hidden;">Contenido basado en componentes complejos ya preparados.</td></tr>
+							<tr><td style="visibility: hidden;">Independencia parcial del equipo de desarrollo.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Método para generar nuevas secciones o páginas sin necesitar nada más que acceso a la edición del contenido.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el administrador/gestor de contenidos de la web?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Facilidad para generar nuevas secciones.</td></tr>
+							<tr><td>Contenido basado en componentes complejos ya preparados.</td></tr>
+							<tr><td style="visibility: hidden;">Independencia parcial del equipo de desarrollo.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Puede utilizar piezas (o moldes) que ya están listas para su uso con un simple cambio de la información que contienen.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el administrador/gestor de contenidos de la web?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Facilidad para generar nuevas secciones.</td></tr>
+							<tr><td>Contenido basado en componentes complejos ya preparados.</td></tr>
+							<tr><td>Independencia parcial del equipo de desarrollo.</td></tr>
+							<tr><td style="visibility: hidden;">Ahorra tiempo.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>No requiere del equipo de desarrollo para generar nuevas páginas basadas en una estructura que ya se ha implementado.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in slide-out">
+					<h2 class="fontx1">¿Qué consigue el administrador/gestor de contenidos de la web?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Facilidad para generar nuevas secciones.</td></tr>
+							<tr><td>Contenido basado en componentes complejos ya preparados.</td></tr>
+							<tr><td>Independencia parcial del equipo de desarrollo.</td></tr>
+							<tr><td>Ahorra tiempo.</td></tr>
+							<tr><td>...</td></tr>
+						</tbody>
+					</table>
+					<img src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Por todo lo anterior tarda menos en generar nuevo contenido o en modificar el que ya existe.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="slide-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el usuario final de la web?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Mejoramos la experiencia de usuario.</td></tr>
+							<tr><td style="visibility: hidden;">Facilitamos el uso.</td></tr>
+							<tr><td style="visibility: hidden;">Evitamos bugs de tematizado.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Dado que conseguimos un sitio basado en piezas con las que el usuario se va a familiarizar y que no varían de una sección a otra, conseguimos una mejor experiencia de usuario.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in fade-out">
+					<h2 class="fontx1">¿Qué consigue el usuario final de la web?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Mejoramos la experiencia de usuario.</td></tr>
+							<tr><td>Facilitamos el uso.</td></tr>
+							<tr><td style="visibility: hidden;">Evitamos bugs de tematizado.</td></tr>
+							<tr><td style="visibility: hidden;">...</td></tr>
+						</tbody>
+					</table>
+					<img style="visibility: hidden;" src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Como mantenemos un estilo coherente con el que el usuario va a interactuar, conseguimos que sea más sencillo el uso del sitio.</h1>
+					<h1>Ejemplo: colores de enlaces diferentes en la página principal que dentro del contenido.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="La importancia de las buenas prácticas > ¿Qué conseguimos?" data-transition="fade-in slide-out">
+					<h2 class="fontx1">¿Qué consigue el usuario final de la web?</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td>Mejoramos la experiencia de usuario.</td></tr>
+							<tr><td>Facilitamos el uso.</td></tr>
+							<tr><td>Evitamos bugs de tematizado.</td></tr>
+							<tr><td>...</td></tr>
+						</tbody>
+					</table>
+					<img src="assets/check.png" width="80" />
+					<aside class="notes">
+					<h1>Al centrar nuestros esfuerzos en dejar "fino" un modelo de componente concreto, va a surgir una versión mucho más pulida y probada. Por ello conseguimos reducir el número de bugs de tematizado.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section>
+					<img src="assets/metodologia.png" />
+
+					<aside class="notes">
+						<h1>Metodología basada en...</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Componentes reutilizables">
+					<h2>Componentes reutilizables</h2>
+					<p class="fragment" data-fragment-index="0">¿Qué son?</p>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Componentes reutilizables">
+					<img src="assets/smacss-structure.png" />
+
+					<aside class="notes">
+						<h1>Elementos de la web que cumplen con ciertas características.</h1>
+						<h1>Son piezas reutilizables que se pueden reposicionar, pueden presentar variaciones y tienen un tematizado asociado.</h1>
+						<table>
+						<tbody class="fonts6">
+							<tr><td><p>¡Reutilizable!</p></td></tr>
+							<tr><td><p>Sirve para representar un elemento / información.</td></p></tr>
+							<tr><td><p>Se puede posicionar en lugares diferentes.</p></td></tr>
+							<tr><td>Tiene implícito un tematizado asociado.</td></tr>
+							<tr><td>Puede tener variaciones (atributo|localización).</td></tr>
+							<tr><td>Pueden emplear varios estilos aislados.</td></tr>						</tbody>
+					</table>
+					</aside>
+					
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Componentes reutilizables">
+					<img src="assets/componentes1.jpg" width="800" />
+
+					<aside class="notes">
+						<h1>Elementos de la web que cumplen con ciertas características.</h1>
+						<h1>Son piezas reutilizables que se pueden reposicionar, pueden presentar variaciones y tienen un tematizado asociado.</h1>
+						<table>
+						<tbody class="fonts6">
+							<tr><td><p>¡Reutilizable!</p></td></tr>
+							<tr><td><p>Sirve para representar un elemento / información.</td></p></tr>
+							<tr><td><p>Se puede posicionar en lugares diferentes.</p></td></tr>
+							<tr><td>Tiene implícito un tematizado asociado.</td></tr>
+							<tr><td>Puede tener variaciones (atributo|localización).</td></tr>
+							<tr><td>Pueden emplear varios estilos aislados.</td></tr>						</tbody>
+					</table>
+					</aside>
+					
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Componentes reutilizables">
+					<img src="assets/component1.jpg"/>
+					<pre><code data-trim data-noescape class="fonts6">
+						&lt;span class="btn btn--secondary"&gt;Más información&lt;/span&gt;
+					</pre></code>
+					<pre><code class="fonts6">
+.btn {
+    display: inline-block;
+    padding: .9em 2em;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+}
+.btn--secondary {
+    background: none;
+    color: #fff;
+    border: 3px solid #fff;
+    font-size: .75em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Componentes reutilizables">
+					<img src="assets/component2.jpg"/>
+				
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Componentes reutilizables">
+					<pre><code data-trim data-noescape class="fonts6">
+&lt;ol class="list-highlight"&gt;
+	&lt;li&gt;Ac iaculis ut&lt;/li&gt;
+	&lt;li&gt;Eu velit massa&lt;/li&gt;
+	&lt;li&gt;Sit turpis tincidunt&lt;/li&gt;
+	&lt;li&gt;Vestibulum in nisl&lt;/li&gt;
+	&lt;li&gt;Magna sed euismod&lt;/li&gt;
+&lt;/ol&gt;
+					</pre></code>
+					<pre><code class="fonts6">
+.list-highlight {
+    padding: 0;
+    list-style: none;
+    ...
+}
+ol.list-highlight {
+    counter-reset: counter;
+}
+ol.list-highlight > li {
+    position: relative;
+    ...
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="slide-in fade-out" data-breadcrumb="Metodología > Guía de estilo">
+					<h5>Guía de estilo</h5>
+					<img src="assets/guiaestilo0.png" />
+
+					<aside class="notes">
+						<h1>Recopila todos los componentes y estilos disponibles</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out" data-breadcrumb="Metodología > Guía de estilo">
+					<h5>Guía de estilo</h5>
+					<img src="assets/guiaestilo1.png" />
+
+					<aside class="notes">
+						<h1>Localización rápida y ágil.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out" data-breadcrumb="Metodología > Guía de estilo">
+					<h5>Guía de estilo</h5>
+					<img src="assets/guiaestilo2.png" />
+
+					<aside class="notes">
+						<h1>Podemos tematizar en esta pantalla, para que luego el site-builder o el gestor de contenidos solo tenga que ver que piezas puede usar.</h1>
+						<h1>Como tematizador me centro en el layout y en los componentes, no en dónde estén montados.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out" data-breadcrumb="Metodología > Guía de estilo">
+					<h5>Guía de estilo</h5>
+					<img src="assets/guiaestilo3.png" />
+
+					<aside class="notes">
+						<h1>Podemos ver exactamente cómo quedará.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in fade-out" data-breadcrumb="Metodología > Guía de estilo">
+					<h5>Guía de estilo</h5>
+					<img src="assets/guiaestilo4.png" />
+
+					<aside class="notes">
+						<h1>Nos ayuda a mantener la uniformidad del diseño.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-transition="fade-in slide-out" data-breadcrumb="Metodología > Guía de estilo">
+					<h5>Guía de estilo</h5>
+					<img src="assets/guiaestilo5.png" />
+
+					<aside class="notes">
+						<h1>Nodos, modos de visualización, listados html, tamaños de textos, etc.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Guía de estilo">
+					<img src="assets/sg1.jpg"/>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Guía de estilo">
+					<img src="assets/sg4.jpg"/>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Guía de estilo">
+					<img src="assets/sg2.jpg"/>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Guía de estilo">
+					<img src="assets/sg3.jpg"/>
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Drupal Style Guide</h2>
+					<pre><code class="fonts6">
+/**
+ * Implements hook_styleguide().
+ */
+function custom_styleguide() {
+  $items = array(
+    'em' => array(
+      'title' => 'Emphasis',
+      'tag' => 'em',
+      'content' => styleguide_word(3),
+    ),
+  );
+  return $items;
+}
+					</pre></code>
+					<aside class="notes">
+						<h1>Nos permite realizar agrupaciones de declaraciones css. Como los prefijos de los diferentes navegadores.</h1>
+						<h1>Se pueden pasar valores.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+				
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>SASS</h2>
+					<table>
+						<tbody class="fonts5">
+							<tr><td class="fragment" data-fragment-index="0"><p>Nos permite generar css de una forma rápida, ágil y cómoda.</p></td></tr>
+							<tr><td class="fragment" data-fragment-index="0">Preprocesado, genera .css a partir de .scss</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Uso de variables.</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Uso de mixins.</td></tr>
+							<tr><td class="fragment" data-fragment-index="3">Anidación de selectores.</td></tr>
+							<tr><td class="fragment" data-fragment-index="4">Herencia de estilos.</td></tr>
+							<tr><td class="fragment" data-fragment-index="5">Operadores y funciones.</td></tr>
+							<tr><td class="fragment" data-fragment-index="6">Funciones (también personalizadas).</td></tr>
+						</tbody>
+					</table>
+					<p class="fragment" data-fragment-index="6"><a class="fonts5" href="http://sass-lang.com/guide" target="_blank">http://sass-lang.com/guide</a></p>
+					<img class="fragment" data-fragment-index="6" src="assets/check.png" width="80" />
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Variables</h2>
+					<pre><code class="fonts6">
+  $xl:    880px;
+  $xxl:   1170px;
+  $xxxl:  1600px;
+
+  $color-primary: #512c15;
+  $color-secondary: white;
+
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Mixin</h2>
+					<pre><code class="fonts6">
+@mixin transform($data) {
+  -webkit-transform: $data;
+  -moz-transform: $data;
+  -ms-transform: $data;
+  -o-transform: $data;
+  transform: $data;
+}
+					</pre></code>
+					<pre><code class="fonts6">
+div.translate {
+  @include transform(translate(0, -50%));
+}
+					</pre></code>
+					<aside class="notes">
+						<h1>Nos permite realizar agrupaciones de declaraciones css. Como los prefijos de los diferentes navegadores.</h1>
+						<h1>Se pueden pasar valores.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Anidación de selectores</h2>
+					<pre><code class="fonts6">
+.list-highlight {
+    a {
+    	color: $color-primary;
+    }
+}
+					</pre></code>
+					<pre><code class="fonts6">
+.list-highlight a {
+    color: #512c15;
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Anidación de selectores</h2>
+					<pre><code class="fonts6">
+.list-highlight {
+    padding: 0;
+    list-style: none;
+    ...
+
+    &ol {
+    	counter-reset: counter;
+
+    	& > li {
+    		position: relative;
+    		...
+        }
+    }
+
+    a {
+    	...
+    }
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Herencia de estilos</h2>
+					<pre><code class="fonts6">
+%blue {
+  color: blue;
+}
+
+a {
+  @extend %blue;
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Operadores y funciones.</h2>
+					<pre><code class="fonts6">
+/* 880px + 20px */
+@include breakpoint($xl + 20px) {
+  ...
+}
+
+/* #e00 */
+a {
+  color: lighten(#800, 20%);	
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h2>Funciones personalizadas.</h2>
+					<pre><code class="fonts6">
+@function my-calculation-function($some-number, $another-number){
+  @return $some-number + $another-number
+}
+
+.my-module {
+  padding: my-calculation-function(10px, 5px);
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SASS">
+					<h3>Uso</h3>
+					<pre><code class="fonts6">sass input.scss output.css</pre></code>
+					<br>
+					<h3 class="fragment" data-fragment-index="1">Integra con:</h3>
+					<p class="fragment" data-fragment-index="1">COMPASS, GULP, GRUNT...</p>
+					<div class="fragment" data-fragment-index="1"><pre><code class="fonts6">compass watch</pre></code></div>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS</h2>
+					<p class="fonts6">Guía de estilo.</p>
+					<img src="assets/smacss-structure.png" />
+					<aside class="notes">
+						<h1>Es una guía de estilo sobre cómo categorizar y organizar las reglas CSS que surgió como solución a problemas de mantenimiento de hojas de estilos CSS.</h1>
+						<h1>Basado en cinco reglas principalmente:</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Base</h2>
+					<table>
+						<tbody class="fonts5">
+							<tr><td class="fragment" data-fragment-index="0">Aplica a elementos únicamente.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Selectores de elementos.</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Selectores no basados en clases ni IDs.</td></tr>
+							<tr><td class="fragment" data-fragment-index="3">No debería ser necesario el uso de !important.</td></tr>
+							<tr><td class="fragment" data-fragment-index="4">Ejemplos: body, header, headings (h1, ..., h6), enlaces (a), etc.</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<pre><code class="fonts6">
+body, form {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #039;
+}
+
+a:hover {
+    color: #03F;    
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Layout</h2>
+					<table>
+						<tbody class="fonts5">
+							<tr><td class="fragment" data-fragment-index="0">Contienen los elementos de la web.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Se pueden categorizar como "major" o "minor".</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Normalmente asociados a un selector ID o clase.</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<pre><code class="fonts6">
+#header, #article, #footer {
+    width: 960px;
+    margin: auto;
+}
+
+#article {
+    border: solid #CCC;
+    border-width: 1px 0 0;
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Module</h2>
+					<table>
+						<tbody class="fonts5">
+							<tr><td class="fragment" data-fragment-index="0">Componente concreto de la web.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Se posicionan dentro de un componente layout.</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Se diseña de forma aislada al resto de componentes.</td></tr>
+							<tr><td class="fragment" data-fragment-index="3">Se pueden reposicionar sin "romper" nada.</td></tr>
+							<tr><td class="fragment" data-fragment-index="4">Uso de selectores por clases CSS.</td></tr>
+							<tr><td class="fragment" data-fragment-index="5">Se evitan los selectores por IDs o de elementos.</td></tr>
+							<tr><td class="fragment" data-fragment-index="6">Clases sub-módulo para evitar !important.</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Module</h2>
+					<pre><code class="fonts6">
+.btn {
+    display: inline-block;
+    padding: .9em 2em;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: State</h2>
+					<table>
+						<tbody class="fonts5">
+							<tr><td class="fragment" data-fragment-index="0">Aumenta y sobreescribe el resto de estilos.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Se aplican normalmente a reglas de layout o module base.</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Se pueden aplicar a reglas layout y/o módulos base.</td></tr>
+							<tr><td class="fragment" data-fragment-index="3">Pueden indicar una dependencia JavaScript.</td></tr>
+							<tr><td class="fragment" data-fragment-index="4">!important permitido.</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: State</h2>
+					<pre><code class="fonts6">
+.btn {
+    display: inline-block;
+    padding: .9em 2em;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+}
+.btn--secondary {
+    background: none;
+    color: #fff;
+    border: 3px solid #fff;
+    font-size: .75em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+					</pre></code>
+
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Theme</h2>
+					<table>
+						<tbody class="fonts5">
+							<tr><td class="fragment" data-fragment-index="0">Sirven para realizar variaciones de estilos sobre los componentes.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Aplicamos en ficheros independientes.</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Theme</h2>
+					<pre><code class="fonts6">
+// in module-name.css
+.mod {
+    border: 1px solid;
+}
+
+// in theme.css
+.mod {
+    border-color: blue;
+}
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Cambio de estado</h2>
+					<p>Representado por:</p>
+					<table>
+						<tbody class="fonts5">
+							<tr><td class="fragment" data-fragment-index="0">Cambio de nombre de clase, normalmente por js.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Pseudo-clase.</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Media queries.</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<!-- @endsection -->
+
+				
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Theme</h2>
+					<pre><code class="fonts6">
+&lt;body&gt;
+					</pre></code>
+
+					<pre><code class="fonts6">
+&lt;body class="push"&gt;
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Theme</h2>
+					<img src="assets/state2.jpg"/>
+					<img src="assets/state1.jpg"/>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h2>SMACSS: Estructura archivos</h2>
+					<pre><code class="fonts5">
+sass/
+|- init/                                |- components/
+|  |- _colors.scss                      |  |- messages/
+|  |- ...                               |  |  |- _messages.scss
+                               
+|- base/                                |- layouts/
+|  |- _root.scss                        |  |- layout-3col/
+|  |- ...                               |  |  |- _layout-3col.scss
+ 
+|- states/
+
+|- styles.scss
+
+
+					</pre></code>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<h3>¿Cómo nombramos las clases de css?</h2>
+					<em class="fonts5">There are only two hard problems in Computer Science: cache invalidation and naming things — Phil Karlton</em>
+					<div class="fragment" data-fragment-index="0"><p class="fonts6">BEM (bloque, elemento, modificador) </p></div>
+					
+					<aside class="notes">
+						<h1>Nos aporta una solución a la hora determinar cómo nombramos los selectores de los componentes.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<p>BEM</p>
+					<pre class="fragment" data-fragment-index="0"><code class="fonts6">
+/* Block */
+.block
+
+/* Element */
+.block__elem
+
+/* Modifier */
+.block__elem--mod
+					</pre></code>
+					<p class="fragment" data-fragment-index="0"><a class="fonts5" href="http://getbem.com/naming/" target="_blank">http://getbem.com/naming/</a></p>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > SMACSS">
+					<p>BEM</p>
+					<pre class="fragment" data-fragment-index="0"><code class="fonts6">
+/* Block */
+.form
+
+/* Element */
+.form__submit
+
+/* Modifier */
+.form__submit--disabled
+					</pre></code>
+					<p class="fragment" data-fragment-index="0"><a class="fonts5" href="http://getbem.com/naming/" target="_blank">http://getbem.com/naming/</a></p>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section>
+					<h2>Estilos predefinidos y coherentes</h2>
+					<aside class="notes">
+						<h1>Intentaremos siempre usar los estilos y los componentes de la guía para lograr un tema uniforme y extensible.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section>
+					<h2>Cómo integrar estilos en ckeditor.</h2>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Cómo integrar estilos en ckeditor">
+					<h2 class="fonts9">Cómo integrar estilos en ckeditor en Drupal 7</h2>
+					<p class="fonts6">ckeditor.styles.js</p>
+					<pre><code class="fonts6">				
+if(typeof(CKEDITOR) !== 'undefined') {
+  CKEDITOR.addStylesSet( 'drupal',
+  [
+    { name : 'Color primary', element : 'span', attributes: { 'class': 'color-primary' } },
+
+  ]);
+}
+					</pre></code>
+					<p class="fonts5">Seleccionamos en el perfil de ckeditor > CSS: "Usar ckeditor.styles.js del tema"</p>
+					<p class="fonts5">Añadimos en la barra de herramientas el botón de estilos ("Formatting styles")</p>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Cómo integrar estilos en ckeditor">
+					<h2 class="fonts9">Cómo integrar estilos en ckeditor en Drupal 8</h2>
+					<p class="fonts6">Añadimos botón y configuramos el listado.</p>
+					<img src="assets/ckeditord8.jpg"/>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section>
+					<h2>Cómo integrar plantillas en ckeditor.</h2>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Cómo integrar plantillas en ckeditor">
+					<h2 class="fonts9">Cómo integrar plantillas en ckeditor en Drupal 7</h2>
+					<p class="fonts6">ckeditor.config.js</p>
+					<pre><code class="fonts6">				
+CKEDITOR.editorConfig = function( config ) {
+  config.templates_files = [ Drupal.settings.basePath + 
+  'sites/all/themes/custom/themename/js/ckeditor.custom.templates.js' ];
+};
+					</pre></code>
+					<pre><code class="fonts6">				
+CKEDITOR.addTemplates( 'default',
+{
+imagesPath: Drupal.settings.basePath + 'sites/all/themes/custom/themename/images/',
+templates :
+  [
+    {
+      title:"Información básica",
+      description:"Información básica",
+      html:'<div class="info__collapsible"><div class="info__toggle">INFORMACIÓN BÁSICA<span class="fa fa-angle-down icon show__active">&nbsp;</span><span class="fa fa-angle-up icon">&nbsp;</span></div><div class="info__content"><div class="wp"><ul class="list-3-cols"><li><h3>EDICIÓN</h3><p>(ejemplo) 23ª edición</p></li><li><h3>FINALIZACIÓN</h3><p>(ejemplo) 11 de octubre de 2017</p></li><li><h3>HORARIO</h3><p>(ejemplo) Lunes a Jueves de 18:00 a 22:00</p></li><li><h3>INICIO</h3><p>(ejemplo) 07 de noviembre de 2016</p></li><li><h3>DURACIÓN</h3><p>(ejemplo) Un aña natural</p></li></ul></div></div></div>'
+    },
+  ]
+});
+					</pre></code>
+					<p class="fonts5">Activamos en el perfil de ckeditor > Opciones avanzadas: "Load ckeditor.config.js from the theme path"</p>
+					<p class="fonts5">Añadimos en la barra de herramientas el plugin de plantillas ("Templates")</p>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Cómo integrar plantillas en ckeditor">
+					<h2 class="fonts9">Drupal 8: Módulo contribuido CKEditor Templates</h2>
+					<p class="fonts6"></p>
+					<aside class="notes">
+						<h1>Requiere plugin templates para ckeditor.</h1>
+						<h1>Contiene un fichero de ejemplo que podremos usar como base.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Cómo integrar plantillas en ckeditor">
+					<h2 class="fonts9">Ejemplo plantillas ckeditor</h2>
+					<img src="assets/plantillas0.jpg" />
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Cómo integrar plantillas en ckeditor">
+					<h2 class="fonts9">Ejemplo plantillas ckeditor</h2>
+					<img src="assets/plantillas1.jpg" />
+					<aside class="notes">
+						<h1>.cke_editable</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Cómo integrar plantillas en ckeditor">
+					<h2 class="fonts9">Ejemplo plantillas ckeditor</h2>
+					<img src="assets/plantillas2.jpg" />
+				</section>
+				<!-- @endsection -->
+
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Propuestas diseño">
+					<h2 class="fontx2">Proponer mejoras para la creación / implementación del diseño.</h2>
+					<p class="fonts8">Un buen diseño compuesto por:</p>
+					<table>
+						<tbody class="fonts6">
+							<tr><td class="fragment" data-fragment-index="0">Guía de estilo.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Componentes incluídos en la guía.</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Componentes reutilizados en las diferentes pantallas.</td></tr>
+							<tr><td class="fragment" data-fragment-index="3">Layouts compatibles con los componentes.</td></tr>
+						</tbody>
+					</table>
+					<img class="fragment" data-fragment-index="4" src="assets/check.png" width="80" />
+					<aside class="notes">
+						<h1>Siempre podemos proponer mejoras si en algún caso no se cumple lo anterior exponiendo las ventajas.</h1>
+					</aside>
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-breadcrumb="Metodología > Propuestas diseño">
+					<h2>Ejemplos</h2>
+					<table>
+						<tbody class="fonts6">
+							<tr><td class="fragment" data-fragment-index="0">Portada con teaser diferentes.</td></tr>
+							<tr><td class="fragment" data-fragment-index="1">Layouts entre secciones diferentes.</td></tr>
+							<tr><td class="fragment" data-fragment-index="2">Tamaños de fuente al detalle.</td></tr>
+							<tr><td class="fragment" data-fragment-index="3">Elementos que están ahí porque "caben".</td></tr>
+							<tr><td class="fragment" data-fragment-index="4">Evitaremos (siempre que podamos) el tematizado modo revista.</td></tr>
+							<tr><td class="fragment" data-fragment-index="4">...</td></tr>
+						</tbody>
+					</table>
+					<img class="fragment" data-fragment-index="4" src="assets/oo.png" width="80" />
+				</section>
+				<!-- @endsection -->
+
+				<!-- @section -->
+				<section data-background-color="#834e2e">
+					<h2>¡Muchas gracias!</h2>
+					<h5>¿Preguntas?</h5>
+					<img src="assets/metadrop-white.svg" class="hide-pdf" width="150" />
+					<img src="assets/metadrop.svg" class="hide-not-pdf" width="150" />
+				</section>
+				<!-- @endsection -->
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/breadcrumb/breadcrumb.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
